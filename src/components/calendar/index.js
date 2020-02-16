@@ -12,6 +12,19 @@ import {
 
 import { appointments } from './demo-data/appointments'
 
+const Appointment = ({ children, style, ...restProps }) => (
+  <Appointments.Appointment
+    {...restProps}
+    style={{
+      ...style,
+      backgroundColor: 'lightGray',
+      borderRadius: '8px',
+    }}
+  >
+    {children}
+  </Appointments.Appointment>
+)
+
 export default class Demo extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -35,11 +48,11 @@ export default class Demo extends React.PureComponent {
             currentDate={currentDate}
             onCurrentDateChange={this.currentDateChange}
           />
-          <WeekView startDayHour={9} endDayHour={19} />
+          <WeekView />
           <Toolbar />
           <DateNavigator />
           <TodayButton />
-          <Appointments />
+          <Appointments appointmentComponent={Appointment} />
         </Scheduler>
       </Paper>
     )
