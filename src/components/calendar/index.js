@@ -57,7 +57,7 @@ export default class Demo extends React.PureComponent {
             currentDate={currentDate}
             onCurrentDateChange={this.currentDateChange}
           />
-          <WeekView />
+          <WeekView startDayHour={8} endDayHour={22} />
           <Toolbar />
           <DateNavigator />
           <TodayButton messages={getTodayMessages(locale)} />
