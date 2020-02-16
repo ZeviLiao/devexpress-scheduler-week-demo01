@@ -17,7 +17,7 @@ const Appointment = ({ children, style, data, ...restProps }) => (
     {...restProps}
     style={{
       ...style,
-      backgroundColor: (data.title === 'Meeting')?'lightGray':'blue',
+      backgroundColor: data.title === 'Meeting' ? 'lightGray' : 'blue',
       borderRadius: '8px',
     }}
   >
