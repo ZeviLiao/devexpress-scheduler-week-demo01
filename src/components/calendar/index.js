@@ -40,7 +40,7 @@ export default class Demo extends React.PureComponent {
 
     this.state = {
       data: appointments,
-      currentDate: getQueryVariable('today'),  //'2020-02-16',
+      currentDate: getQueryVariable('today'), //'2020-02-16',
       locale: 'zh-TW',
     }
     this.currentDateChange = currentDate => {
