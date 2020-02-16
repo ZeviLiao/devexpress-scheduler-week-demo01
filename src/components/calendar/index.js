@@ -285,7 +285,7 @@ class Demo extends React.PureComponent {
     super(props);
     this.state = {
       data: appointments,
-      currentDate: '2018-06-27',
+      currentDate: '2020-02-16',
       confirmationVisible: false,
       editingFormVisible: false,
       deletedAppointmentId: undefined,
