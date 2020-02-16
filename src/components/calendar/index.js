@@ -12,12 +12,12 @@ import {
 
 import { appointments } from './demo-data/appointments'
 
-const Appointment = ({ children, style, ...restProps }) => (
+const Appointment = ({ children, style, data, ...restProps }) => (
   <Appointments.Appointment
     {...restProps}
     style={{
       ...style,
-      backgroundColor: 'lightGray',
+      backgroundColor: (data.title === 'Meeting')?'lightGray':'blue',
       borderRadius: '8px',
     }}
   >
