@@ -25,6 +25,14 @@ const Appointment = ({ children, style, ...restProps }) => (
   </Appointments.Appointment>
 )
 
+const todayLocalizationMessages = {
+  'zh-TW': {
+    today: '今天',
+  },
+}
+
+const getTodayMessages = locale => todayLocalizationMessages[locale]
+
 export default class Demo extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -32,6 +40,7 @@ export default class Demo extends React.PureComponent {
     this.state = {
       data: appointments,
       currentDate: '2020-02-16',
+      locale: 'zh-TW',
     }
     this.currentDateChange = currentDate => {
       this.setState({ currentDate })
@@ -39,11 +48,11 @@ export default class Demo extends React.PureComponent {
   }
 
   render() {
-    const { data, currentDate } = this.state
+    const { data, currentDate, locale } = this.state
 
     return (
       <Paper>
-        <Scheduler data={data} height={660}>
+        <Scheduler data={data} height={660} locale={locale}>
           <ViewState
             currentDate={currentDate}
             onCurrentDateChange={this.currentDateChange}
@@ -51,7 +60,7 @@ export default class Demo extends React.PureComponent {
           <WeekView />
           <Toolbar />
           <DateNavigator />
-          <TodayButton />
+          <TodayButton messages={getTodayMessages(locale)} />
           <Appointments appointmentComponent={Appointment} />
         </Scheduler>
       </Paper>
