@@ -101,12 +101,12 @@ export default class Demo extends React.PureComponent {
 
     this.state = {
       data: appointments,
-      locale: 'zh-TW',
+      locale: 'en-US', //'zh-TW',
     }
   }
 
   render() {
-    const { data , locale} = this.state
+    const { data, locale } = this.state
 
     return (
       <Paper>
