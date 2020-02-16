@@ -1,12 +1,11 @@
 import React from 'react'
 import './App.css'
-// import Calendar from './components/calendar'
-import ShowParam from './components/showParam'
+import Calendar from './components/calendar'
 
 function App() {
   return (
     <div className="App">
-      <ShowParam />
+      <Calendar />
     </div>
   )
 }

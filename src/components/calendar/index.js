@@ -11,6 +11,7 @@ import {
 } from '@devexpress/dx-react-scheduler-material-ui'
 
 import { appointments } from './demo-data/appointments'
+import getQueryVariable from './getQueryVariable'
 
 const Appointment = ({ children, style, data, ...restProps }) => (
   <Appointments.Appointment
@@ -39,7 +40,7 @@ export default class Demo extends React.PureComponent {
 
     this.state = {
       data: appointments,
-      currentDate: '2020-02-16',
+      currentDate: getQueryVariable('today'),  //'2020-02-16',
       locale: 'zh-TW',
     }
     this.currentDateChange = currentDate => {

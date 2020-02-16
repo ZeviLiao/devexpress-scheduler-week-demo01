@@ -1,6 +1,6 @@
-import React from 'react'
 
-function getQueryVariable(variable) {
+
+export default function getQueryVariable(variable) {
   var query = window.location.search.substring(1)
   console.log(query) //"app=article&act=news_content&aid=160990"
   var vars = query.split('&')
@@ -13,9 +13,4 @@ function getQueryVariable(variable) {
     }
   }
   return false
-}
-
-export default function showParam() {
-  let abc = getQueryVariable('abc')
-  return <>{abc}</>
 }
