@@ -117,6 +117,7 @@ export default class Demo extends React.PureComponent {
             endDayHour={22}
             timeTableCellComponent={TimeTableCell}
             dayScaleCellComponent={DayScaleCell}
+            cellDuration={60}
           />
           <Toolbar />
           <DateNavigator />
