@@ -12,6 +12,7 @@ import {
 import { withStyles } from '@material-ui/core/styles'
 import { fade } from '@material-ui/core/styles/colorManipulator'
 import { appointments } from './demo-data/appointments'
+import moment from 'moment'
 // import getQueryVariable from './getQueryVariable'
 
 const style = theme => ({
@@ -95,6 +96,17 @@ const DayScaleCell = withStyles(style, { name: 'DayScaleCell' })(
   DayScaleCellBase
 )
 
+const TimeScaleLabel = ({ formatDate, ...restProps }) => {
+  return (
+    <WeekView.TimeScaleLabel
+      {...restProps}
+      formatDate={t => {
+        return moment(t).format('HH')
+      }}
+    />
+  )
+}
+
 export default class Demo extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -110,14 +122,16 @@ export default class Demo extends React.PureComponent {
 
     return (
       <Paper>
-        <Scheduler data={data} height={660} locale={locale}>
+        <Scheduler data={data} height={453} locale={locale}>
           <ViewState />
           <WeekView
-            startDayHour={8}
+            startDayHour={10}
             endDayHour={22}
             timeTableCellComponent={TimeTableCell}
             dayScaleCellComponent={DayScaleCell}
             cellDuration={60}
+            formatDate={'HH:00'}
+            timeScaleLabelComponent={TimeScaleLabel}
           />
           <Toolbar />
           <DateNavigator />
