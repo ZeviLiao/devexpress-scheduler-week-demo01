@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "/",
+  "homepage": "/apps",
   "private": true,
   "dependencies": {
     "@devexpress/dx-react-core": "^2.4.0",
@@ -15,6 +15,7 @@
     "material-ui-icons": "^1.0.0-beta.36",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1"
   },
   "scripts": {

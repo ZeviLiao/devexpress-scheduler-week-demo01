@@ -107,7 +107,7 @@ const TimeScaleLabel = ({ formatDate, ...restProps }) => {
   )
 }
 
-export default class Demo extends React.PureComponent {
+export default class Calendar extends React.PureComponent {
   constructor(props) {
     super(props)
 
